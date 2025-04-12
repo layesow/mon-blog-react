@@ -1,0 +1,83 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f8f9fa;
+  }
+
+  header {
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  .navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+
+  .carousel-item {
+    aspect-ratio: 16 / 6;
+    overflow: hidden;
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  
+  
+  
+
+  .post-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+  }
+
+  .post-image {
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  .post-image img {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+    transition: transform 0.4s ease;
+    border-radius: 10px;
+  }
+
+  .post-image img:hover {
+    transform: scale(1.05);
+  }
+
+
+  .post-sidebar {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+  }
+
+  footer {
+    background: #343a40;
+    color: #fff;
+    padding: 40px 0;
+  }
+
+  footer a {
+    color: #bbb;
+    text-decoration: none;
+  }
+
+  footer a:hover {
+    color: #fff;
+  }
+
+  .badge {
+    font-size: 0.85rem;
+  }
