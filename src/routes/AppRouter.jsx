@@ -1,45 +1,31 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import PrivateRoute from '../layouts/PrivateRoute';
+import MainLayout from '../layouts/MainLayout'; // Import du layout
 
-import MainLayout from '../layouts/MainLayout';
-import AdminLayout from '../layouts/AdminLayout';
-
-// Pages utilisateur
+// Pages publiques
 import Home from '../pages/user/Home';
-
+import Login from '../pages/auth/Login';
+import Register from '../pages/auth/Register';
 
 // Pages admin
 import Dashboard from '../pages/admin/Dashboard';
+import AdminArticles from '../pages/admin/Articles';
 
 function AppRouter() {
   return (
-    <Router>
-      <Routes>
-        {/* Routes utilisateur */}
-        <Route element={<MainLayout />}>
-          <Route path="/" element={<Home />} />
-          {/* <Route path="/article/:id" element={<ArticleDetails />} />
-          <Route path="/categorie/:id" element={<ArticlesByCategory />} />
-          <Route path="/tag/:id" element={<ArticlesByTag />} />
-          <Route path="/profil" element={<Profile />} />
-          <Route path="/connexion" element={<Login />} />
-          <Route path="/inscription" element={<Register />} /> */}
-        </Route>
+    <Routes>
+      {/* Routes publiques avec MainLayout */}
+      <Route element={<MainLayout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Route>
 
-        {/* Routes admin */}
-        <Route element={<AdminLayout />}>
-          <Route path="/admin" element={<Dashboard />} />
-          {/* <Route path="/admin/utilisateurs" element={<Users />} />
-          <Route path="/admin/ajouter-utilisateur" element={<AddUser />} />
-          <Route path="/admin/articles" element={<Articles />} />
-          <Route path="/admin/ajouter-article" element={<AddArticle />} />
-          <Route path="/admin/modifier-article/:id" element={<EditArticle />} />
-          <Route path="/admin/categories" element={<Categories />} />
-          <Route path="/admin/tags" element={<Tags />} />
-          <Route path="/admin/commentaires" element={<Comments />} /> */}
-        </Route>
-      </Routes>
-    </Router>
+      {/* Routes admin avec protection */}
+      <Route path="/admin" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+      <Route path="/admin/articles" element={<PrivateRoute><AdminArticles /></PrivateRoute>} />
+    </Routes>
   );
 }
 
