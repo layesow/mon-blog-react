@@ -11,6 +11,9 @@ import Register from '../pages/auth/Register';
 // Pages admin
 import Dashboard from '../pages/admin/Dashboard';
 import AdminArticles from '../pages/admin/Articles';
+import Article from '../pages/user/Article';
+import Apropos from '../pages/user/Apropos';
+import Contact from '../pages/user/Contact';
 
 function AppRouter() {
   return (
@@ -18,6 +21,12 @@ function AppRouter() {
       {/* Routes publiques avec MainLayout */}
       <Route element={<MainLayout />}>
         <Route path="/" element={<Home />} />
+        <Route path="/articles" element={<Article />} />
+        <Route path="/a-propos" element={<Apropos />} />
+        <Route path="/contact" element={<Contact />} />
+
+
+        {/* auth */}
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Route>

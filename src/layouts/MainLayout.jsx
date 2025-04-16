@@ -30,10 +30,10 @@ const MainLayout = () => {
 
           <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul className="navbar-nav">
-              <li className="nav-item"><a className="nav-link" href="#">Accueil</a></li>
-              <li className="nav-item"><a className="nav-link" href="#">Articles</a></li>
-              <li className="nav-item"><a className="nav-link" href="#">Catégories</a></li>
-              <li className="nav-item"><a className="nav-link" href="#">Contact</a></li>
+              <li className="nav-item"><Link className="nav-link" to="/">Accueil</Link></li>
+              <li className="nav-item"><Link className="nav-link" to="/articles">Articles</Link></li>
+              <li className="nav-item"><Link className="nav-link" to="/a-propos">A propos</Link></li>
+              <li className="nav-item"><Link className="nav-link" to="/contact">Contact</Link></li>
             </ul>
 
             <ul className="navbar-nav">
