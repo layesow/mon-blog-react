@@ -14,12 +14,19 @@ import AdminArticles from '../pages/admin/Articles';
 import Article from '../pages/user/Article';
 import Apropos from '../pages/user/Apropos';
 import Contact from '../pages/user/Contact';
+import { HelmetProvider } from 'react-helmet-async';
 
 function AppRouter() {
   return (
     <Routes>
       {/* Routes publiques avec MainLayout */}
-      <Route element={<MainLayout />}>
+      {/* <Route element={<MainLayout />}> */}
+      <Route element={
+        <HelmetProvider>
+          <MainLayout />
+        </HelmetProvider>
+      }>
+      
         <Route path="/" element={<Home />} />
         <Route path="/articles" element={<Article />} />
         <Route path="/a-propos" element={<Apropos />} />

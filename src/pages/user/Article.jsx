@@ -4,6 +4,7 @@ import React from 'react';
 
 function Article() {
   return (
+    <>
     <div className="container py-5">
       {/* Titre de la page */}
       <div className="mb-4 text-left">
@@ -77,6 +78,7 @@ function Article() {
         {/* Réplique d'autres articles ici... */}
       </div>
     </div>
+    </>
   );
 }
 
